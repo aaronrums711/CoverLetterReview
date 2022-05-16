@@ -7,6 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoverLetterReview.Data
 {
+
+    /// <summary>
+    /// this class represents one document uploaded by a user.  An admin will be able to see all documents by all users, 
+    /// but a regular user will only be able to see the list of documents that they have personally uploaded for review. 
+    /// </summary>
     public class Document
     {
         private int priority;

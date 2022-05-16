@@ -1,0 +1,63 @@
+﻿@model CoverLetterReview.Data.Document
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Document</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label"></label>
+                <input asp-for="Priority" class="form-control" />
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentName" class="control-label"></label>
+                <input asp-for="DocumentName" class="form-control" />
+                <span asp-validation-for="DocumentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocumentText" class="control-label"></label>
+                <input asp-for="DocumentText" class="form-control" />
+                <span asp-validation-for="DocumentText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubmittedDateTime" class="control-label"></label>
+                <input asp-for="SubmittedDateTime" class="form-control" />
+                <span asp-validation-for="SubmittedDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntendedJob" class="control-label"></label>
+                <input asp-for="IntendedJob" class="form-control" />
+                <span asp-validation-for="IntendedJob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubmittedByUserID" class="control-label"></label>
+                <input asp-for="SubmittedByUserID" class="form-control" />
+                <span asp-validation-for="SubmittedByUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ReviewCompleted" /> @Html.DisplayNameFor(model => model.ReviewCompleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -438,3 +438,8 @@ C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\bin\D
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Create.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Delete.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Details.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Edit.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Index.cshtml.g.cs

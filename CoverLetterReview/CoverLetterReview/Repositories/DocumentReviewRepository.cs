@@ -18,42 +18,48 @@ namespace CoverLetterReview.Repositories
 
         public bool Create(DocumentReview entity)
         {
-            throw new NotImplementedException();
+            _db.DocumentReview.Add(entity);
+            return Save();
         }
 
         public bool Delete(DocumentReview entity)
         {
-            throw new NotImplementedException();
+            _db.Remove(entity);
+            return Save();
         }
 
         public ICollection<DocumentReview> FindAll()
         {
-            throw new NotImplementedException();
+            return _db.DocumentReview.ToList();
         }
 
         public DocumentReview FindByID(int ID)
         {
-            throw new NotImplementedException();
+            DocumentReview review = _db.DocumentReview.FirstOrDefault(q => q.ID == ID);
+            return review;
         }
 
         public ICollection<DocumentReview> GetAllFeedback(int DocumentID)
         {
-            throw new NotImplementedException();
+            ICollection<DocumentReview> allFeeback = _db.DocumentReview.Where(q => q.BaseDocumentID == DocumentID).ToList();
+            return allFeeback;
         }
 
         public bool isExists(int ID)
         {
-            throw new NotImplementedException();
+            bool exists = _db.DocumentReview.Any(q => q.ID == ID);
+            return exists;
         }
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            return _db.SaveChanges() > 0;  //mouse over SaveChanges() to see that it returns an int for how many records are changed
         }
 
         public bool Update(DocumentReview entity)
         {
-            throw new NotImplementedException();
+            _db.DocumentReview.Update(entity);
+            return Save();
         }
     }
 }

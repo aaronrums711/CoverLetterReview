@@ -17,5 +17,6 @@ namespace CoverLetterReview.Data
         public int BaseDocumentID { get; set; }
         [Key]public int ID { get; set; }
         public string DocumentFragmentText { get; set; }
+        public DateTime RecordInsertDateTime { get; set; } = DateTime.Now;
     }
 }

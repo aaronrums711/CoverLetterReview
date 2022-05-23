@@ -19,5 +19,8 @@ namespace CoverLetterReview.Data
         public string ReviewCommentText { get; set; }
         public enum _CommentType { positive, constructive, neutral };
         public _CommentType CommentType;
+
+        public DateTime RecordInsertDateTime { get; set; } = DateTime.Now;
+
     }
 }

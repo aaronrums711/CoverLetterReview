@@ -9,6 +9,6 @@ namespace CoverLetterReview.Contracts
     interface IDocumentRepository : IRepositoryBase<Document>
     {
         public ICollection<Document> GetAllDocsFromUser(string UserID);
-
+        public string GetFirstNumChar(string documentText, int numChar);
     }
 }

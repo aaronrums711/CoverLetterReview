@@ -4,14 +4,21 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>this is great</h1>
+<h1>Upload your Cover Letter</h1>
 
-<h4>Document</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <form asp-action="Create">
+
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="DocumentName" class="control-label"></label>
+                <input asp-for="DocumentName" class="form-control" />
+                <span asp-validation-for="DocumentName" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
                 <input asp-for="Priority" class="form-control" />
@@ -22,12 +29,17 @@
                 <input asp-for="IntendedJob" class="form-control" />
                 <span asp-validation-for="IntendedJob" class="text-danger"></span>
             </div>
-            <div action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
-                <input type="submit">
-            </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="DocumentText" class="control-label"></label>
+                <input asp-for="DocumentText" class="form-control" />
+                <span asp-validation-for="DocumentText" class="text-danger"></span>
+            </div>
+            @*<div action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Upload Document" class="btn btn-primary" />
             </div>
         </form>
     </div>

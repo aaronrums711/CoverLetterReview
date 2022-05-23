@@ -41,6 +41,11 @@ namespace CoverLetterReview.Repositories
             throw new NotImplementedException();
         }
 
+        public string GetFirstNumChar(string documentText, int charCount = 30)
+        {
+            return documentText.Substring(0, charCount);
+        }
+
         public bool isExists(int ID)
         {
             throw new NotImplementedException();

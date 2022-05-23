@@ -32,9 +32,12 @@ namespace CoverLetterReview.Data
             }
         }
 
+        [Display(Name = "Document Name")]
         public string DocumentName { get; set; }
         public string DocumentText { get; set; }
-        public DateTime SubmittedDateTime { get; set; }
+        
+        public string DocumentTextFirst30 { get; set; }
+        public DateTime SubmittedDateTime { get; set; } = DateTime.Now;
         public string IntendedJob { get; set; }
         public string SubmittedByUserID { get; set; }
         [Key] public int ID { get; set; }

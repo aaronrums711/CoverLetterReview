@@ -53,15 +53,17 @@ namespace CoverLetterReview.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Priority,DocumentName,DocumentText,SubmittedDateTime,IntendedJob,SubmittedByUserID,ID,ReviewCompleted")] Document document)
+        public async Task<IActionResult> Create(Document document)
         {
+            Document newDoc = document;
+            newDoc.DocumentTextFirst30 = newDoc.DocumentText.Substring(0, 30) + "...";
             if (ModelState.IsValid)
             {
-                _context.Add(document);
+                _context.Add(newDoc);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(document);
+            return View(newDoc);
         }
 
         // GET: Documents/Edit/5

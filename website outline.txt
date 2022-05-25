@@ -1,0 +1,47 @@
+User can:
+	upload a document
+	view a list of all of their uploaded documents, and their status and basic info.
+	view the feedback on a particular document
+	
+
+
+Admin can:
+	view all uploaded documents, view details, and if they still require feedback
+	give feedback to uploaded cover letters
+	
+	
+	
+
+
+Views:	
+
+	user
+		user index
+			displays the initial options that a user has.  These will be
+				1. Login or create an account
+				2. upload a document for future review
+				3. view list of already uploaded documents.  From here, user will be able to view feedback on a particular document
+				
+		user document create view
+			displays basic input fields describing a document, and allows user to upload a document. 
+		
+		user document list view	
+			displays all the documents that any user has uploaded in the past, and basic info
+		
+		user document details view
+			displays more granular details about any selected document that a user has uploaded in the past
+			From here, the user should also be able to view feedback if it's ready
+			
+		user document feedback view
+			displays the full document text, and any feedback. 
+			There needs to be some visual representation of a piece of feedback relating to a particular sentence or sentences
+		
+	admin
+		admin document list view
+			displays all of the documents and if they still require feedback
+			
+		admin document feedback
+			allows admin to give feedback on a selected document. 
+			
+			
+			

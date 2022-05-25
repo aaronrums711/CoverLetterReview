@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoverLetterReview.Data;
 
-namespace LeaveManagementApplication
+namespace CoverLetterReview
 {
     public static class SeedData
     {

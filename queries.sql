@@ -15,3 +15,22 @@ SELECT *
 FROM dbo.documentreview
 WHERE 1 = 1;
 
+
+
+
+SELECT 
+* 
+FROM dbo.AspNetUserRoles
+WHERE 1=1
+
+SELECT 
+* 
+FROM dbo.AspNetRoles
+WHERE 1=1
+
+
+
+SELECT 
+* 
+FROM dbo.AspNetUsers
+WHERE 1=1

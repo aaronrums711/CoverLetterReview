@@ -19,6 +19,15 @@ WHERE 1 = 1;
 
 
 SELECT 
+U.UserName,
+R.Name AS RoleName
+FROM dbo.AspNetUserRoles AS UR
+JOIN dbo.AspNetUsers AS U ON U.ID = UR.UserId
+JOIN dbo.AspNetRoles AS R ON R.ID = UR.RoleId
+WHERE 1=1
+
+
+SELECT 
 * 
 FROM dbo.AspNetUserRoles
 WHERE 1=1
@@ -27,8 +36,6 @@ SELECT
 * 
 FROM dbo.AspNetRoles
 WHERE 1=1
-
-
 
 SELECT 
 * 

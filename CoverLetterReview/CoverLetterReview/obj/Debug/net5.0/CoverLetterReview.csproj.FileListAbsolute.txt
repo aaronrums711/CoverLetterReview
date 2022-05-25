@@ -443,3 +443,9 @@ C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\D
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Details.cshtml.g.cs
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Edit.cshtml.g.cs
 C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Views\Documents\Index.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\PersonalMasterGit\CoverLetterReview\CoverLetterReview\CoverLetterReview\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

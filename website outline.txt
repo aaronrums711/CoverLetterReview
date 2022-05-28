@@ -22,7 +22,7 @@ Views:
 				2. upload a document for future review
 				3. view list of already uploaded documents.  From here, user will be able to view feedback on a particular document
 				
-		user document create view
+		user document create view. 
 			displays basic input fields describing a document, and allows user to upload a document. 
 		
 		user document list view	
@@ -47,4 +47,7 @@ Views:
 			
 			
 test pw
-Weekday11?
+Weekday11?   (blah@test.com)
+
+admin pw
+P@ssword!123!

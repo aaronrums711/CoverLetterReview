@@ -19,10 +19,16 @@ namespace CoverLetterReview.Controllers
         }
 
         // GET: Documents
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> AdminIndex()
         {
             return View(await _context.Document.ToListAsync());
         }
+
+        public async Task<IActionResult> UserIndex()
+        {
+            return View(await _context.Document.ToListAsync());
+        }
+
 
         // GET: Documents/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -61,9 +67,9 @@ namespace CoverLetterReview.Controllers
             {
                 _context.Add(newDoc);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("UserIndex");  //only users will ever create documents, so there's no need to do any logic to determine if a user or admin is logged in
             }
-            return View(newDoc);
+            return RedirectToAction("UserIndex");
         }
 
         // GET: Documents/Edit/5

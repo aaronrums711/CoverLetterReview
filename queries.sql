@@ -1,6 +1,14 @@
 USE [aspnet-CoverLetterReview-BEF1DD88-970D-4E3B-BF8D-ED184980BFE6];
 
-SELECT *
+SELECT ID,
+       Priority,
+       DocumentName,
+       DocumentText,
+       SubmittedDateTime,
+       IntendedJob,
+       SubmittedByUserID,
+       ReviewCompleted,
+       DocumentTextFirst30
 FROM dbo.document
 WHERE 1 = 1;
 
@@ -19,11 +27,12 @@ WHERE 1 = 1;
 
 
 SELECT 
+U.ID AS UserID,
 U.UserName,
 R.Name AS RoleName
-FROM dbo.AspNetUserRoles AS UR
-JOIN dbo.AspNetUsers AS U ON U.ID = UR.UserId
-JOIN dbo.AspNetRoles AS R ON R.ID = UR.RoleId
+FROM dbo.AspNetUsers AS U
+LEFT JOIN  dbo.AspNetUserRoles AS UR ON UR.UserID = U.ID
+LEFT JOIN dbo.AspNetRoles AS R ON R.ID = UR.RoleId
 WHERE 1=1
 
 

@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoverLetterReview.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace CoverLetterReview.Controllers
 {
     public class DocumentsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public DocumentsController(ApplicationDbContext context)
+        public DocumentsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Documents
@@ -24,9 +27,12 @@ namespace CoverLetterReview.Controllers
             return View(await _context.Document.ToListAsync());
         }
 
-        public async Task<IActionResult> UserIndex()
+        public IActionResult UserIndex()
         {
-            return View(await _context.Document.ToListAsync());
+            string userID = _userManager.GetUserAsync(User).Result.Id;
+            List<Document> documents = _context.Document.Where(q => q.SubmittedByUserID == userID).ToList();
+
+            return View(documents);
         }
 
 
@@ -54,15 +60,14 @@ namespace CoverLetterReview.Controllers
             return View();
         }
 
-        // POST: Documents/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Document document)
         {
             Document newDoc = document;
             newDoc.DocumentTextFirst30 = newDoc.DocumentText.Substring(0, 30) + "...";
+            newDoc.SubmittedByUserID = _userManager.GetUserAsync(User).Result.Id;   //I don't fully understand how User is succesfully passed in here
             if (ModelState.IsValid)
             {
                 _context.Add(newDoc);

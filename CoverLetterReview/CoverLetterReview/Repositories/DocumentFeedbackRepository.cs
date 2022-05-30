@@ -7,41 +7,41 @@ using CoverLetterReview.Data;
 
 namespace CoverLetterReview.Repositories
 {
-    public class DocumentReviewRepository : IDocumentReviewRepository
+    public class DocumentFeedbackRepository : IDocumentFeedbackRepository
     {
         private readonly ApplicationDbContext _db;
-        public DocumentReviewRepository(ApplicationDbContext db)
+        public DocumentFeedbackRepository(ApplicationDbContext db)
         {
             _db = db;
         }
 
 
-        public bool Create(DocumentReview entity)
+        public bool Create(DocumentFeedback entity)
         {
             _db.DocumentReview.Add(entity);
             return Save();
         }
 
-        public bool Delete(DocumentReview entity)
+        public bool Delete(DocumentFeedback entity)
         {
             _db.Remove(entity);
             return Save();
         }
 
-        public ICollection<DocumentReview> FindAll()
+        public ICollection<DocumentFeedback> FindAll()
         {
             return _db.DocumentReview.ToList();
         }
 
-        public DocumentReview FindByID(int ID)
+        public DocumentFeedback FindByID(int ID)
         {
-            DocumentReview review = _db.DocumentReview.FirstOrDefault(q => q.ID == ID);
+            DocumentFeedback review = _db.DocumentReview.FirstOrDefault(q => q.ID == ID);
             return review;
         }
 
-        public ICollection<DocumentReview> GetAllFeedback(int DocumentID)
+        public ICollection<DocumentFeedback> GetAllFeedback(int DocumentID)
         {
-            ICollection<DocumentReview> allFeeback = _db.DocumentReview.Where(q => q.BaseDocumentID == DocumentID).ToList();
+            ICollection<DocumentFeedback> allFeeback = _db.DocumentReview.Where(q => q.BaseDocumentID == DocumentID).ToList();
             return allFeeback;
         }
 
@@ -56,7 +56,7 @@ namespace CoverLetterReview.Repositories
             return _db.SaveChanges() > 0;  //mouse over SaveChanges() to see that it returns an int for how many records are changed
         }
 
-        public bool Update(DocumentReview entity)
+        public bool Update(DocumentFeedback entity)
         {
             _db.DocumentReview.Update(entity);
             return Save();

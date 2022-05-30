@@ -6,8 +6,8 @@ using CoverLetterReview.Data;
 
 namespace CoverLetterReview.Contracts
 {
-    interface IDocumentReviewRepository : IRepositoryBase<DocumentReview>
+    interface IDocumentFeedbackRepository : IRepositoryBase<DocumentFeedback>
     {
-        public ICollection<DocumentReview> GetAllFeedback(int DocumentID);
+        public ICollection<DocumentFeedback> GetAllFeedback(int DocumentID);
     }
 }

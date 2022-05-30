@@ -16,7 +16,7 @@ namespace CoverLetterReview.Data
 
         public DbSet<Document> Document { get; set; }
         public DbSet<DocumentFragment> DocumentFragment { get; set; }
-        public DbSet<DocumentReview> DocumentReview { get; set; }
+        public DbSet<DocumentFeedback> DocumentReview { get; set; }
 
     }
 }

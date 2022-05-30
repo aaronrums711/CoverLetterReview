@@ -52,5 +52,8 @@ namespace CoverLetterReview.Data
         {
             return DocumentText.Substring(0, charCount) + "...";
         }
+
+        public DateTime? ReviewCompletedDateTime { get; set; }
+        public DateTime? ReviewStartedDateTime { get; set;  }
     }
 }

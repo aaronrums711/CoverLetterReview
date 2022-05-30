@@ -9,7 +9,7 @@ namespace CoverLetterReview.Data
 {
     /// <summary>
     /// one DocumentReview item is one piece of feedback regarding a particular document.  Sometimes the DocumentFragmentID 
-    /// can be null if the feedback regards the entire document, not any particular part. 
+    /// can be null if the feedback regards the entire document, not any particular part. DocumentLevelFeedback also signifies this
     /// </summary>
     public class DocumentFeedback
     {
@@ -21,6 +21,8 @@ namespace CoverLetterReview.Data
         public _CommentType CommentType;
 
         public DateTime RecordInsertDateTime { get; set; } = DateTime.Now;
+
+        public bool DocumentLevelFeedback { get; set; }
 
     }
 }

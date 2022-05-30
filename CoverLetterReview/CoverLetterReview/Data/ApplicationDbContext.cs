@@ -16,7 +16,13 @@ namespace CoverLetterReview.Data
 
         public DbSet<Document> Document { get; set; }
         public DbSet<DocumentFragment> DocumentFragment { get; set; }
-        public DbSet<DocumentFeedback> DocumentReview { get; set; }
+        public DbSet<DocumentFeedback> DocumentReview  { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)  //this is necessary because the DocumentFeedback class was originally named DocumentReview.  
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<DocumentFeedback>().ToTable("DocumentFeedback");
+        }
 
     }
 }

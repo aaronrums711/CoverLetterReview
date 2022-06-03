@@ -29,9 +29,15 @@
         {
             <h5>Hello Admin</h5>
             <div>
-                <a class = "btn btn-outline-info" asp-controller="Documents" asp-action="AdminIndex"> View Pending Cover Letters</a>
+                <a class="btn btn-outline-info" asp-controller="Documents" asp-action="AdminIndex"> View Pending Cover Letters</a>
             </div>
         }
+    }
+    else
+    {
+        <div>
+            <p>Please <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">register</a> so you can upload your cover letter</p>
+        </div>
     }
 
 

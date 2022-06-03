@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoverLetterReview.Data;
 using Microsoft.AspNetCore.Identity;
+using CoverLetterReview.ViewModels;
 
 namespace CoverLetterReview.Controllers
 {
@@ -24,7 +25,49 @@ namespace CoverLetterReview.Controllers
         // GET: Documents
         public async Task<IActionResult> AdminIndex()
         {
-            return View(await _context.Document.ToListAsync());
+            List<AdminListDocumentVM> objects = new List<AdminListDocumentVM>();
+
+            foreach (Document doc in _context.Document)
+            {
+                AdminListDocumentVM docVM = new AdminListDocumentVM();
+                switch (doc.Priority)
+                {
+                    case 1:
+                        docVM.PriorityDescription = "Low";
+                            break;
+                    case 2:
+                        docVM.PriorityDescription = "Medium";
+                        break;
+                    case 3:
+                        docVM.PriorityDescription = "High";
+                        break;
+                }
+                IdentityUser user = _context.Users.FirstOrDefault(q => q.Id == doc.SubmittedByUserID);
+                docVM.SubmittedByUserName = (user == null) ? "Unknown" : user.UserName;
+                docVM.IntendedJob = doc.IntendedJob;
+                docVM.SubmittedDateTime = doc.SubmittedDateTime;
+                docVM.DocumentName = doc.DocumentName;
+                docVM.DocumentTextFirst30 = doc.DocumentTextFirst30;
+                docVM.ID = doc.ID;
+                if (!doc.ReviewCompleted)
+                {
+                    if(doc.ReviewStartedDateTime == null)
+                    {
+                        docVM.ReviewStatus = "Not Started";
+                    }
+                    else if (doc.ReviewStartedDateTime != null)
+                    {
+                        docVM.ReviewStatus = "In Progress";
+                    }
+                }
+                else
+                {
+                    docVM.ReviewStatus = "Finished";
+                }
+                objects.Add(docVM);
+            }
+
+            return View(objects);
         }
 
         public IActionResult UserIndex()

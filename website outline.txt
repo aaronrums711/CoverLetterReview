@@ -41,7 +41,7 @@ Views:
 	
 	admin
 		admin document list view
-			displays all of the documents and if they still require feedback
+			displays all of the documents and if they still require feedback, along with some details
 			
 		admin document feedback
 			allows admin to give feedback on a selected document. 

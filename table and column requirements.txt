@@ -1,0 +1,5 @@
+additional fields needed:
+Document.ReviewFinishedDateTime			--done
+Document.ReviewStartedDateTime			--done
+
+DocumentFeedback.DocumentLevelFeedback	--done
